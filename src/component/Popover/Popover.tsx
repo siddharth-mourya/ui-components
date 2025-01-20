@@ -1,32 +1,33 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 
 interface PopoverProps {
   align?: "start" | "center" | "end";
   alignOffset?: number;
   isOpen?: boolean;
-  onOpenChange?: (isOpen: boolean) => void;
+  updatePopoverOpenState?: (isOpen: boolean) => void;
   position?: "left" | "right" | "top" | "bottom";
   positionOffset?: number;
   width?: number;
   className?: string;
   showCloseBtn?: boolean;
   children: React.ReactNode;
+  triggerRef: React.RefObject<HTMLElement>;
 }
 
 const Popover: React.FC<PopoverProps> = ({
   align = "start",
   alignOffset = 0,
   isOpen = false,
-  onOpenChange,
+  updatePopoverOpenState,
   position = "bottom",
   positionOffset = 0,
   width = "100%",
   className,
   showCloseBtn = false,
   children,
+  triggerRef,
 }) => {
-  const popoverRef = useRef<HTMLDivElement | null>(null);
-  const triggerRef = useRef<HTMLDivElement | null>(null);
+  const popoverRef = useRef<HTMLElement | null>(null);
 
   const handleClickOutside = (e: MouseEvent) => {
     if (
@@ -35,7 +36,7 @@ const Popover: React.FC<PopoverProps> = ({
       !popoverRef.current.contains(e.target as Node) &&
       !triggerRef.current?.contains(e.target as Node)
     ) {
-      onOpenChange?.(false);
+      updatePopoverOpenState?.(false);
     }
   };
 
@@ -81,14 +82,15 @@ const Popover: React.FC<PopoverProps> = ({
     <div className={className}>
       {isOpen && (
         <div
-          ref={popoverRef}
+          tabIndex={0}
+          ref={popoverRef as any}
           style={{ ...popoverStyles, position: "absolute" }}
           className="popover"
         >
           {showCloseBtn && (
             <button
               onClick={() => {
-                onOpenChange?.(false);
+                updatePopoverOpenState?.(false);
               }}
               className="close-btn"
             >
