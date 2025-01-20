@@ -2,38 +2,33 @@ import React, { useState, useRef } from "react";
 import Popover from "../../../component/Popover/Popover";
 
 const PopoverCompSection = () => {
+  const [inputValue, setInputValue] = useState("");
+
   const [isPopoverOpen, setPopoverOpen] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   return (
-    <div style={{ padding: "100px" }}>
+    <div>
+      <br />
       <input
+        value={inputValue}
         ref={inputRef}
-        type="text"
-        placeholder="Click or focus me"
         onFocus={() => setPopoverOpen(true)}
-        // onBlur={(e) => {
-        //   // Only close if focus is outside of popover
-        //   if (!e.relatedTarget?.closest(".popover")) {
-        //     setPopoverOpen(false);
-        //   }
-        // }}
-        style={{ padding: "8px", width: "200px" }}
+        onBlur={() => setPopoverOpen(false)}
+        onChange={(e: any) => setInputValue(e.target.value)}
+        placeholder="Focus to open popover"
+        style={{ position: "relative", width: "400px", padding: "10px" }}
       />
       <Popover
-        isOpen={isPopoverOpen}
-        onOpenChange={setPopoverOpen}
-        anchorRef={inputRef}
-        align="center"
         position="bottom"
-        positionOffset={8}
-        width="anchor"
-        showCloseBtn
+        width={inputRef.current?.offsetWidth || 0}
+        // width={200}
+        align="start"
+        showCloseBtn={true}
+        isOpen={isPopoverOpen}
+        onOpenChange={(open) => setPopoverOpen(open)}
       >
-        <div>
-          <p>This is your custom content!</p>
-          <button onClick={() => alert("Button clicked!")}>Click me</button>
-        </div>
+        <h1>hello popovber content</h1>
       </Popover>
     </div>
   );
