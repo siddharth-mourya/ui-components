@@ -47,6 +47,35 @@ const Popover: React.FC<PopoverProps> = ({
     };
   }, [popoverRef, triggerRef]);
 
+  useEffect(() => {
+    if (triggerRef.current) {
+      triggerRef.current.style.position = "relative";
+    }
+
+    return () => {
+      if (triggerRef.current) {
+        triggerRef.current.style.position = "static";
+      }
+    };
+  }, [triggerRef]);
+
+  const handleEscapeKey = (e: KeyboardEvent) => {
+    // Check if the pressed key is the 'Escape' key
+    if (e.key === "Escape") {
+      updatePopoverOpenState?.(false);
+    }
+  };
+
+  useEffect(() => {
+    // Add the keydown event listener to handle Escape key
+    document.addEventListener("keydown", handleEscapeKey);
+
+    return () => {
+      // Cleanup the event listener on unmount
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, []);
+
   const popoverStyles = {
     width: `${width}px`,
     top:

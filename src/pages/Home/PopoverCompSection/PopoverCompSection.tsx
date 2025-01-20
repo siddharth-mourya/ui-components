@@ -15,7 +15,7 @@ const PopoverCompSection = () => {
         onFocus={() => setPopoverOpen(true)}
         onChange={(e: any) => setInputValue(e.target.value)}
         placeholder="Focus to open popover"
-        style={{ position: "relative", width: "400px", padding: "10px" }}
+        style={{ width: "400px", padding: "10px" }}
       />
       <Popover
         position="bottom"
