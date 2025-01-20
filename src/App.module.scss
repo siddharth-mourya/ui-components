@@ -1,0 +1,15 @@
+@import './styles/color';
+
+.appContainer {
+  background-color: $primary-color ;
+  width: 100%;
+  padding: 1%;
+  box-sizing: border-box;
+  height: 100vh;
+  .mainComponent {
+    background-color: $background-color;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+  }
+}
