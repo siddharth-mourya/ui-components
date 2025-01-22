@@ -1,21 +1,33 @@
-// Dark Color Palette
-$primary-color: #1f2937; // Dark Gray - Primary
-$secondary-color: #374151; // Medium Dark Gray - Secondary
-$accent-color: #6366f1; // Indigo - Accent
-$background-color: #111827; // Very Dark Background
-$text-color: #d1d5db; // Light Gray - Text
-$whitish-color: #e4e7ea; // Light white - Text
-$muted-text-color: #9ca3af; // Muted Light Gray - Text
-$border-color: #4b5563; // Dark Border Color
-$hover-color: #2563eb; // Bright Blue for Hover Effects
-$success-color: #22c55e; // Green for Success
-$error-color: #ef4444; // Red for Error
-$warning-color: #facc15; // Yellow for Warnings
+// Primary Color Palette
+$primary-lightest: #ffcbcb;
+$primary-lighter: #ffc1c1;
+$primary: #ffb5b5; // Base color
+$primary-darker: #e6a2a2;
+$primary-darkest: #cc8f8f;
 
-// Gradients
-$primary-gradient: linear-gradient(90deg, #1f2937, #374151);
-$accent-gradient: linear-gradient(90deg, #6366f1, #2563eb);
+// Secondary Color Palette
+$secondary-lightest: #407088;
+$secondary-lighter: #4a7d98;
+$secondary: #407088; // Base color
+$secondary-darker: #365f6f;
+$secondary-darkest: #2c4c5b;
 
-// Shadows
-$box-shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-$box-shadow-dark: 0 4px 6px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+// Accent Color Palette
+$accent-lightest: #132743;
+$accent-lighter: #1b3454;
+$accent: #132743; // Base color
+$accent-darker: #0f2136;
+$accent-darkest: #0a1928;
+
+// Neutral Colors (Optional for balance)
+$neutral-lightest: #f9f9f9;
+$neutral-lighter: #e6e6e6;
+$neutral: #cccccc; // Base color
+$neutral-darker: #a3a3a3;
+$neutral-darkest: #808080;
+
+// Additional Utility Colors (Optional)
+$error: #e57373; // Error feedback
+$success: #81c784; // Success feedback
+$warning: #ffb74d; // Warning feedback
+$info: #64b5f6; // Information feedback

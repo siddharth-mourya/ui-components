@@ -1,0 +1,39 @@
+@import './color';
+
+// Global Spacing Variables
+$spacing-small: 8px;
+$spacing-medium: 16px;
+$spacing-large: 24px;
+
+// Padding Variables
+$padding-small: 8px;
+$padding-medium: 16px;
+$padding-large: 24px;
+
+// Margin Variables
+$margin-small: 8px;
+$margin-medium: 16px;
+$margin-large: 24px;
+
+// Global Reset and Typography
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}
