@@ -1,0 +1,33 @@
+// Primary Color Palette
+$primary-darkest: #45171d; // Base color
+$primary-darker: #5b2328;
+$primary: #e84a5f; // Lighter shade
+$primary-lighter: #f28a96;
+$primary-lightest: #f6bcc8;
+
+// Secondary Color Palette
+$secondary-darkest: #e84a5f; // Base color
+$secondary-darker: #c0374f;
+$secondary: #ff847c; // Lighter shade
+$secondary-lighter: #f0948d;
+$secondary-lightest: #f8b1a6;
+
+// Accent Color Palette
+$accent-darkest: #fecea8; // Base color
+$accent-darker: #fddf8c;
+$accent: #fecea8; // Light accent shade
+$accent-lighter: #fef1d4;
+$accent-lightest: #fef8e6;
+
+// Neutral Colors (Optional for balance)
+$neutral-lightest: #f9f9f9;
+$neutral-lighter: #e6e6e6;
+$neutral: #cccccc; // Base color
+$neutral-darker: #a3a3a3;
+$neutral-darkest: #808080;
+
+// Additional Utility Colors (Optional)
+$error: #e57373; // Error feedback
+$success: #81c784; // Success feedback
+$warning: #ffb74d; // Warning feedback
+$info: #64b5f6; // Information feedback
